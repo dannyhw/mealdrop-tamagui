@@ -1,6 +1,12 @@
 const { getDefaultConfig } = require("expo/metro-config");
 
 const defaultConfig = getDefaultConfig(__dirname, { isCSSEnabled: true });
+const { loadTamagui } = require("@tamagui/static");
+
+loadTamagui({
+  config: "tamagui.config.ts",
+  components: ["tamagui"],
+});
 
 if (process.env.STORYBOOK_ENABLED) {
   const path = require("path");
